@@ -2,6 +2,11 @@
 `binascii` [Convert between binary and ASCII](https://docs.python.org/2/library/binascii.html),
 该模块比较简单，还是直接看代码吧。
 
+- 十进制的转换：`hex`,`oct`
+- 其他进制转十进制：`int(xx)`或`int('进制字符串形式', 进制)`
+- ascii 码的字符表示： `chr(97)`
+- 字符的ascii 码表示: `ord('a')`
+- 将ascii 码转与进制互转: 需要`binascii`库，意思就是 `进制<->ascii`.例如`b2a_hex('a')`,  表示将ascii 码转为16进制，`b`:进制，`a`：ascii。
 
 1.数字字符串表示
 
@@ -42,10 +47,19 @@
     print base64.b64encode('a') == (binascii.b2a_base64('a')).replace('\n','')		# True
 
 
-## 应用：图片>>base64>>二进制文本 转换
+## 应用
 
-参考：[py 图片>>base64>>二进制文本 转换](http://linux521.blog.51cto.com/4099846/1101775)
+关于`a2b_hex`，可以用[byte_string_to_hex](https://github.com/BeginMan/pytool/blob/master/datastruct/byte-to-hex.py#L11)来写原型；`b2a_hex`可以用[byte_string_from_hex](https://github.com/BeginMan/pytool/blob/master/datastruct/byte-to-hex.py#L22)来替代
 
-代码[这里](https://gist.github.com/33e7e8f3a7707c79d80f)
+**不过还是建议用标准库的好**
+
+参考：
+
+- [python 进制转换小结](http://blog.csdn.net/jiaxiaolei19871112/article/details/6772729)
+- [py 图片>>base64>>二进制文本 转换](http://linux521.blog.51cto.com/4099846/1101775)
+
+代码:
+
+- [图片>>base64>>二进制文本 转换](https://gist.github.com/33e7e8f3a7707c79d80f)
 
 
